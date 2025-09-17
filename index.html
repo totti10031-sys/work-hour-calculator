@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>労働時間計算アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>労働時間計算アプリ</h1>
+
+        <div id="setup">
+            <h2>初期設定</h2>
+            <div class="input-group">
+                <label for="total-days">月の総労働日数:</label>
+                <input type="number" id="total-days" placeholder="例: 20">
+            </div>
+            <div class="input-group">
+                <label for="total-hours">月の所定労働時間:</label>
+                <input type="number" id="total-hours" placeholder="例: 160">
+            </div>
+            <button id="start-btn">設定して開始</button>
+        </div>
+
+        <div id="main-content" class="hidden">
+            <div id="summary-container">
+                <div class="summary-card">
+                    <h3>現在の状況</h3>
+                    <p id="total-status"></p>
+                    <small>残りの必要労働時間: <span id="remaining-hours"></span></small>
+                </div>
+                <div class="summary-card">
+                    <h3>月末予測</h3>
+                    <p id="projected-status"></p>
+                    <small>（空欄の日を8時間労働として計算）</small>
+                </div>
+            </div>
+            <div id="daily-inputs-container">
+                <div class="daily-input-header">
+                    <span>日</span>
+                    <span>労働時間</span>
+                    <span>その日までの累計過不足</span>
+                </div>
+                <div id="daily-inputs"></div>
+            </div>
+             <button id="reset-btn">設定をリセット</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
